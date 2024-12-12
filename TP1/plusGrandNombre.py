@@ -1,4 +1,4 @@
-"""Trouve le plus grand nombre parmi cinq nombres saisis."""
+"""Trouvons le plus grand nombre parmi un certains nombres saisis."""
 a = int(input("entrer le nombre de chiffre: "))
 nombres = []
 for i in range(a):

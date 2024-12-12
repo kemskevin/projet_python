@@ -1,5 +1,5 @@
-"""Compte le nombre de voyelles dans une phrase."""
-phrase = input("Entrez une phrase : ")
+"""Comptons le nombre de voyelles dans une phrase."""
+phrase = input("Entrez une phrase: ")
 voyelles = "aeiouAEIOU"  # On inclut les voyelles majuscules
 compteur = 0
 for lettre in phrase:

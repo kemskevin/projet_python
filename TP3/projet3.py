@@ -68,6 +68,7 @@ surveiller_repertoire_avec_log(repertoire_cible)
 
 import pandas as pd
 
+
 # Analyser le fichier de log
 def visualiser_evenements_log(fichier_log):
     logs = pd.read_csv(fichier_log, sep=" - ", header=None, engine="python", names=["timestamp", "event", "path"])
