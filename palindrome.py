@@ -1,4 +1,4 @@
-"""Vérifie si une chaîne est un palindrome."""
+"""Vérifions si une chaîne est un palindrome."""
 chaine = input("Entrez un mot : ")
 #chaine = chaine.lower()  # On met tout en minuscules pour ignorer la casse
 if chaine == chaine[::-1]:
