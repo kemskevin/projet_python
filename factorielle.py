@@ -1,5 +1,5 @@
 def factorielle(n):
-    """Calcule la factorielle d'un nombre n de manière récursive."""
+    """Fonction qui permet le calcul du factorielle d'un nombre n de manière récursive."""
     if n == 0:
         return 1
     else:
