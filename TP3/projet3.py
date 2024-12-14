@@ -1,6 +1,9 @@
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
+import matplotlib.pyplot as plt
+import pandas as pd
+
 
 # Handler pour gérer les événements
 class MonHandler(FileSystemEventHandler):
@@ -65,8 +68,6 @@ def surveiller_repertoire_avec_log(repertoire):
 
 # Exemple d'utilisation
 surveiller_repertoire_avec_log(repertoire_cible)
-
-import pandas as pd
 
 
 # Analyser le fichier de log

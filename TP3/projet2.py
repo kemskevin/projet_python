@@ -1,4 +1,6 @@
 import socket
+import matplotlib.pyplot as plt
+
 
 # Fonction pour scanner un port
 def scanner_port(ip, port):
@@ -20,12 +22,6 @@ def scanner_ports(ip, ports):
     for port in ports:
         scanner_port(ip, port)
 
-# Exemple d'utilisation
-ip_cible = "127.0.0.1"  # Remplacez par l'IP cible
-ports_a_tester = [22, 80, 443, 8080]
-scanner_ports(ip_cible, ports_a_tester)
-
-import matplotlib.pyplot as plt
 
 def visualiser_ports(ip, ports):
     ouverts = []
@@ -43,5 +39,9 @@ def visualiser_ports(ip, ports):
     plt.ylabel("Nombre de ports")
     plt.show()
 
-# Exemple d'utilisation
-visualiser_ports(ip_cible, ports_a_tester)
+
+if __name__ == "__main__":
+    ip_cible = input("entrer une adresse ip. voici un exemple: 127.0.0.1 ")
+    ports_a_tester = [22, 80, 443, 8080]
+    scanner_ports(ip_cible, ports_a_tester)
+    visualiser_ports(ip_cible, ports_a_tester)
