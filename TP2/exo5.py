@@ -18,4 +18,5 @@ def suite_conway(n):
         print(f"u{i} = {terme}")
 
 # Exemple d'utilisation
-suite_conway(20)
+a= int(input("entrer un nombre dont vous voulez connaitre sa suite de conway: "))
+suite_conway(a)
