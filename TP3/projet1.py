@@ -2,7 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Charger les données depuis le fichier CSV
+# Chargeons les données depuis le fichier CSV
 df = pd.read_csv("classsification_log.csv", header=None, names=["timestamp", "user_id", "file_path"])
 
 # Convertir la colonne "timestamp" en format datetime

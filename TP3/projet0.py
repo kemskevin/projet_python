@@ -9,10 +9,10 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# Demander le chemin du répertoire source
+# Demande du chemin du répertoire source
 repertoire_source = input("Entrez le chemin du répertoire source : ")
 
-# Vérification si le répertoire existe
+# Vérifions si le répertoire existe
 if not os.path.exists(repertoire_source):
     logging.error(f"Le répertoire {repertoire_source} n'existe pas.")
     print("Erreur : Répertoire introuvable.")
@@ -25,7 +25,7 @@ def classer_fichiers(repertoire):
         for fichier in fichiers:
             chemin_fichier = os.path.join(repertoire, fichier)
 
-            # Ignorer les répertoires
+            # Ignorons les répertoires
             if os.path.isdir(chemin_fichier):
                 continue
 
@@ -38,7 +38,7 @@ def classer_fichiers(repertoire):
             if not os.path.exists(sous_dossier):
                 os.makedirs(sous_dossier)
 
-            # Déplacer le fichier dans le sous-dossier
+            # Déplaçons le fichier dans le sous-dossier
             destination = os.path.join(sous_dossier, fichier)
             shutil.move(chemin_fichier, destination)
             logging.info(f"Fichier déplacé : {chemin_fichier} -> {destination}")

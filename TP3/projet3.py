@@ -3,6 +3,8 @@ from watchdog.events import FileSystemEventHandler
 import time
 import matplotlib.pyplot as plt
 import pandas as pd
+import logging
+
 
 
 # Handler pour gérer les événements
@@ -31,14 +33,7 @@ def surveiller_repertoire(repertoire):
         observer.stop()
     observer.join()
 
-# Exemple d'utilisation
-repertoire_cible = input("chemin_vers_votre_repertoire ")
-surveiller_repertoire(repertoire_cible)
-
-
-import logging
-
-# Configurer le fichier de log
+# Configuration du fichier de log
 logging.basicConfig(filename="surveillance_log.txt", level=logging.INFO, format="%(asctime)s - %(message)s")
 
 class MonHandlerAvecLog(FileSystemEventHandler):
@@ -66,10 +61,6 @@ def surveiller_repertoire_avec_log(repertoire):
         observer.stop()
     observer.join()
 
-# Exemple d'utilisation
-surveiller_repertoire_avec_log(repertoire_cible)
-
-
 # Analyser le fichier de log
 def visualiser_evenements_log(fichier_log):
     logs = pd.read_csv(fichier_log, sep=" - ", header=None, engine="python", names=["timestamp", "event", "path"])
@@ -80,5 +71,8 @@ def visualiser_evenements_log(fichier_log):
     plt.ylabel("Nombre d'événements")
     plt.show()
 
-# Exemple d'utilisation
-visualiser_evenements_log("surveillance_log.txt")
+if __name__ == "__main__":
+    repertoire_cible = input("chemin_vers_votre_repertoire ")
+    surveiller_repertoire(repertoire_cible)
+    surveiller_repertoire_avec_log(repertoire_cible)
+    visualiser_evenements_log("surveillance_log.txt")
